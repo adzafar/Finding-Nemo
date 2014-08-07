@@ -3,16 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.flipkart.adeelzafar.finding_nemo.RedLevelAlert"
-    android:background="#ffff1810">
+    android:background="@color/Red">
 
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:weightSum="5"
-    >
-
-
+    <LinearLayout style="@style/AlertScreens">
+        <TextView
+            android:text="R"
+            android:id="@+id/textView"
+            android:textColor="@color/Red"
+            style="@style/BannerCharacter"
+        />
     </LinearLayout>
 </FrameLayout>

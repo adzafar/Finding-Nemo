@@ -3,6 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.flipkart.adeelzafar.finding_nemo.YellowLevelAlert"
-    android:background="#fffff108">
+    android:background="@color/Yellow">
 
+    <LinearLayout style="@style/AlertScreens">
+        <TextView
+            android:text="Y"
+            android:id="@+id/textView"
+            android:textColor="@color/Yellow"
+            style="@style/BannerCharacter"
+        />
+        </LinearLayout>
 </FrameLayout>

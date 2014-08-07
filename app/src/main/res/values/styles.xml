@@ -5,4 +5,33 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="BannerCharacter">
+        <item name="android:paddingLeft">4px</item>
+        <item name="android:paddingBottom">4px</item>
+        <item name="android:textSize">120dp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">20</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AlertScreens">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:weightSum">8</item>
+        <item name="android:background">@drawable/shadow_border_black</item>
+    </style>
+
+    <color name="Red">#ffff1810</color>
+    <color name="Yellow">#fffff108</color>
+    <color name="Orange">#ffff6d04</color>
+    <color name="LightGrey">#eeeeee</color>
 </resources>
