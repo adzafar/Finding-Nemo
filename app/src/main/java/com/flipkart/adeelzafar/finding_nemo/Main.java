@@ -121,7 +121,7 @@ public class Main extends Activity {
          * The fragment argument representing the section number for this
          * fragment.
          */
-        private static final String ARG_SECTION_NUMBER = "section_number";
+        private static final String ARG_SECTION_NUMBER = "1";
 
         /**
          * Returns a new instance of this fragment for the given section
