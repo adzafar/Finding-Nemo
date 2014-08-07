@@ -12,5 +12,10 @@
             android:textColor="@color/Yellow"
             style="@style/BannerCharacter"
         />
+
+        <LinearLayout
+            style="@style/AlertListsContainer">
+
         </LinearLayout>
+    </LinearLayout>
 </FrameLayout>
