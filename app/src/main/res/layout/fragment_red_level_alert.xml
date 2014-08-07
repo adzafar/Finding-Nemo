@@ -16,31 +16,21 @@
         <LinearLayout
            style="@style/AlertListsContainer">
 
-            <ScrollView
-                android:layout_width="match_parent"
+            <ListView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/scrollView"
-                android:layout_weight="1">
-
-                <ListView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/listView" />
-            </ScrollView>
+                android:id="@+id/red_upper_list_view"
+                android:layout_weight="1"/>
 
             <View style="@style/Divider"/>
 
-            <ScrollView
-                android:layout_width="match_parent"
+            <ListView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/scrollView2"
-                android:layout_weight="1">
-
-                <ListView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/listView2" />
-            </ScrollView>
+                android:id="@+id/red_lower_list_view"
+                android:layout_weight="1"/>
         </LinearLayout>
+
     </LinearLayout>
+
 </FrameLayout>

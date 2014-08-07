@@ -16,6 +16,19 @@
         <LinearLayout
             style="@style/AlertListsContainer">
 
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/orange_upper_list_view"
+                android:layout_weight="1"/>
+
+            <View style="@style/Divider"/>
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/orange_lower_list_view"
+                android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
