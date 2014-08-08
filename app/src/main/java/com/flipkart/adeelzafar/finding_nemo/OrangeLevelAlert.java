@@ -34,17 +34,13 @@ public class OrangeLevelAlert extends AbstractAlertFragment {
         super.onActivityCreated(savedInstanceState);
 
         LinearLayout layout = (LinearLayout)getActivity().findViewById(R.id.orange_upper);
-
-        for(TargetModel model : ModelHandler.models){
-            if(model.getTargetGroup() == TargetModel.TargetGroup.ORANGE)
-                layout.addView(CustomButton.makeButton(model, getActivity()));
-        }
+        ModelHandler.orangeUpper = layout;
 
         LinearLayout layout2 = (LinearLayout)getActivity().findViewById(R.id.orange_lower);
-        for(TargetModel model : ModelHandler.models){
-            if(model.getTargetGroup() == TargetModel.TargetGroup.AVAILABLE)
-                layout2.addView(CustomButton.makeButton(model, getActivity()));
-        }
+        ModelHandler.orangeLower = layout2;
+
+        ModelHandler.updateOrangeLower();
+        ModelHandler.updateOrangeUpper();
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -59,17 +59,13 @@ public class YellowLevelAlert extends AbstractAlertFragment {
         super.onActivityCreated(savedInstanceState);
 
         LinearLayout layout = (LinearLayout)getActivity().findViewById(R.id.yellow_upper);
-
-        for(TargetModel model : ModelHandler.models){
-            if(model.getTargetGroup() == TargetModel.TargetGroup.YELLOW)
-                layout.addView(CustomButton.makeButton(model, getActivity()));
-        }
+        ModelHandler.yellowUpper = layout;
 
         LinearLayout layout2 = (LinearLayout)getActivity().findViewById(R.id.yellow_lower);
-        for(TargetModel model : ModelHandler.models){
-            if(model.getTargetGroup() == TargetModel.TargetGroup.AVAILABLE)
-                layout2.addView(CustomButton.makeButton(model, getActivity()));
-        }
+        ModelHandler.yellowLower = layout2;
+
+        ModelHandler.updateYellowUpper();
+        ModelHandler.updateYellowLower();
     }
 
     /**
