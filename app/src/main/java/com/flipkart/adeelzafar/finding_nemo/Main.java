@@ -76,7 +76,7 @@ public class Main extends FragmentActivity {
                 // Loop through paired devices
                 for (BluetoothDevice device : pairedDevices) {
                     // Add the name and address to an array adapter to show in a ListView
-                    ModelHandler.models.add(new TargetModel(device.getName(), false, TargetModel.TargetGroup.RED));
+                    ModelHandler.models.add(new TargetModel(device.getName(), false, TargetModel.TargetGroup.RED, device.getAddress()));
                 }
             }
         }

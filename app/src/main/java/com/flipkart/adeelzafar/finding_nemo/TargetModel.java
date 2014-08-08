@@ -8,6 +8,15 @@ public class TargetModel {
     private String phoneName = "";
     private boolean permanent = false;
     private TargetGroup targetGroup;
+    private String mac ="";
+
+    public String getMac() {
+        return mac;
+    }
+
+    public void setMac(String mac) {
+        this.mac = mac;
+    }
 
     public static enum TargetGroup{
         RED, YELLOW, ORANGE, AVAILABLE
@@ -37,9 +46,10 @@ public class TargetModel {
         this.phoneName = phoneName;
     }
 
-    public TargetModel(String phoneName, boolean permanent, TargetGroup tg) {
+    public TargetModel(String phoneName, boolean permanent, TargetGroup tg, String mac) {
         this.phoneName = phoneName;
         this.permanent = permanent;
         this.targetGroup = tg;
+        this.mac = mac;
     }
 }
