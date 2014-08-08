@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
 
 public class YellowLevelAlert extends AbstractAlertFragment {
     private OnFragmentInteractionListener mListener;
@@ -51,6 +53,23 @@ public class YellowLevelAlert extends AbstractAlertFragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    public void onActivityCreated(Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
+
+        LinearLayout layout = (LinearLayout)getActivity().findViewById(R.id.yellow_upper);
+
+        for(TargetModel model : ModelHandler.models){
+            if(model.getTargetGroup() == TargetModel.TargetGroup.YELLOW)
+                layout.addView(CustomButton.makeButton(model, getActivity()));
+        }
+
+        LinearLayout layout2 = (LinearLayout)getActivity().findViewById(R.id.yellow_lower);
+        for(TargetModel model : ModelHandler.models){
+            if(model.getTargetGroup() == TargetModel.TargetGroup.AVAILABLE)
+                layout2.addView(CustomButton.makeButton(model, getActivity()));
+        }
     }
 
     /**

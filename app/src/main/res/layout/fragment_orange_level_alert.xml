@@ -21,7 +21,8 @@
                 android:layout_width="match_parent"
                 android:layout_weight="1">
                 <LinearLayout
-                    style="@style/TagView">
+                    style="@style/TagView"
+                    android:id="@+id/orange_upper">
 
                 </LinearLayout>
             </ScrollView>
@@ -33,7 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_weight="1">
                 <LinearLayout
-                    style="@style/TagView">
+                    style="@style/TagView"
+                    android:id="@+id/orange_lower">
 
                 </LinearLayout>
             </ScrollView>

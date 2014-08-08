@@ -2,12 +2,17 @@ package com.flipkart.adeelzafar.finding_nemo;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Set;
 
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.content.Intent;
+import android.graphics.AvoidXfermode;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -21,6 +26,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Main extends FragmentActivity {
@@ -49,13 +55,33 @@ public class Main extends FragmentActivity {
 
         setContentView(R.layout.activity_main);
 
-        models = new ArrayList<TargetModel>();
-        models.add(new TargetModel("Adeel", false, TargetModel.TargetGroup.ORANGE));
-        models.add(new TargetModel("Prachi", false, TargetModel.TargetGroup.RED));
-        models.add(new TargetModel("Vidyasankar", false, TargetModel.TargetGroup.AVAILABLE));
-        models.add(new TargetModel("Arpit Agarwal", false, TargetModel.TargetGroup.RED));
-        models.add(new TargetModel("Saurabh Agrawal", false, TargetModel.TargetGroup.YELLOW));
-        models.add(new TargetModel("Tejasvee", false, TargetModel.TargetGroup.AVAILABLE));
+        ModelHandler.models = new ArrayList<TargetModel>();
+
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        if (mBluetoothAdapter != null) {
+            if (!mBluetoothAdapter.isEnabled()) {
+                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(enableBtIntent, 1);
+            }
+
+            //3. start scanning for bluetooth devices
+            mBluetoothAdapter.startDiscovery();
+
+            //Fetching the Paired Devices
+            //ASSUMPTION: We are just looking for Paired Devices as of now.
+            Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+            // If there are paired devices
+            if (pairedDevices.size() > 0) {
+                // Loop through paired devices
+                for (BluetoothDevice device : pairedDevices) {
+                    // Add the name and address to an array adapter to show in a ListView
+                    ModelHandler.models.add(new TargetModel(device.getName(), false, TargetModel.TargetGroup.RED));
+                }
+            }
+        }
+
+
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.

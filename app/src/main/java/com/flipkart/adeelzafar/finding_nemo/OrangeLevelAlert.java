@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 public class OrangeLevelAlert extends AbstractAlertFragment {
     private OnFragmentInteractionListener mListener;
@@ -27,6 +28,23 @@ public class OrangeLevelAlert extends AbstractAlertFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_orange_level_alert, container, false);
+    }
+
+    public void onActivityCreated(Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
+
+        LinearLayout layout = (LinearLayout)getActivity().findViewById(R.id.orange_upper);
+
+        for(TargetModel model : ModelHandler.models){
+            if(model.getTargetGroup() == TargetModel.TargetGroup.ORANGE)
+                layout.addView(CustomButton.makeButton(model, getActivity()));
+        }
+
+        LinearLayout layout2 = (LinearLayout)getActivity().findViewById(R.id.orange_lower);
+        for(TargetModel model : ModelHandler.models){
+            if(model.getTargetGroup() == TargetModel.TargetGroup.AVAILABLE)
+                layout2.addView(CustomButton.makeButton(model, getActivity()));
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event

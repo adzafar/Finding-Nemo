@@ -37,14 +37,18 @@ public class RedLevelAlert extends AbstractAlertFragment {
 
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        ArrayList<TargetModel> models = new ArrayList<TargetModel>();
-        models.add(new TargetModel("abc", true, TargetModel.TargetGroup.RED));
-        models.add(new TargetModel("xyz wefweg wegweg", false, TargetModel.TargetGroup.RED));
 
         LinearLayout layout = (LinearLayout)getActivity().findViewById(R.id.red_upper);
 
-        for(getActivity().){
-            layout.addView(CustomButton.makeButton(model, getActivity()));
+        for(TargetModel model : ModelHandler.models){
+            if(model.getTargetGroup() == TargetModel.TargetGroup.RED)
+                layout.addView(CustomButton.makeButton(model, getActivity()));
+        }
+
+        LinearLayout layout2 = (LinearLayout)getActivity().findViewById(R.id.red_lower);
+        for(TargetModel model : ModelHandler.models){
+            if(model.getTargetGroup() == TargetModel.TargetGroup.AVAILABLE)
+                layout2.addView(CustomButton.makeButton(model, getActivity()));
         }
     }
 
