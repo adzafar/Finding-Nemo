@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 public class RedLevelAlert extends AbstractAlertFragment {
     private OnFragmentInteractionListener mListener;
 
@@ -16,12 +18,21 @@ public class RedLevelAlert extends AbstractAlertFragment {
         fragment.setArgs(param);
         return fragment;
     }
+
     public RedLevelAlert() {
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ArrayList<TargetModel> redListItems = new ArrayList<TargetModel>();
+        redListItems.add(new TargetModel("abcd", true));
+        redListItems.add(new TargetModel("xyz", false));
+        redListItems.add(new TargetModel("lmno", false));
+
+        TargetListAdapter adapter = new TargetListAdapter(, R.layout.list_item_view, redListItems) ;
+        getListView ( ) . setAdapter ( adapter ) ;
     }
 
     @Override

@@ -17,18 +17,14 @@
            style="@style/AlertListsContainer">
 
             <ListView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/red_upper_list_view"
-                android:layout_weight="1"/>
+                style="@style/ListViewUpper"
+                android:id="@+id/red_upper_list_view"/>
 
             <View style="@style/Divider"/>
 
             <ListView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/red_lower_list_view"
-                android:layout_weight="1"/>
+                style="@style/ListViewLower"
+                android:id="@+id/red_lower_list_view"/>
         </LinearLayout>
 
     </LinearLayout>
