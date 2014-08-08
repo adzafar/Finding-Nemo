@@ -39,17 +39,13 @@ public class RedLevelAlert extends AbstractAlertFragment {
         super.onActivityCreated(savedInstanceState);
 
         LinearLayout layout = (LinearLayout)getActivity().findViewById(R.id.red_upper);
-
-        for(TargetModel model : ModelHandler.models){
-            if(model.getTargetGroup() == TargetModel.TargetGroup.RED)
-                layout.addView(CustomButton.makeButton(model, getActivity()));
-        }
+        ModelHandler.redUpper = layout;
 
         LinearLayout layout2 = (LinearLayout)getActivity().findViewById(R.id.red_lower);
-        for(TargetModel model : ModelHandler.models){
-            if(model.getTargetGroup() == TargetModel.TargetGroup.AVAILABLE)
-                layout2.addView(CustomButton.makeButton(model, getActivity()));
-        }
+        ModelHandler.redLower = layout2;
+
+        ModelHandler.updateRedUpper();
+        ModelHandler.updateRedLower();
     }
 
     // TODO: Rename method, update argument and hook method into UI event
