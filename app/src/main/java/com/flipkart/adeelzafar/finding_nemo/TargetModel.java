@@ -7,6 +7,19 @@ public class TargetModel {
 
     private String phoneName = "";
     private boolean permanent = false;
+    private TargetGroup targetGroup;
+
+    public static enum TargetGroup{
+        RED, YELLOW, ORANGE, AVAILABLE
+    }
+
+    public TargetGroup getTargetGroup() {
+        return targetGroup;
+    }
+
+    public void setTargetGroup(TargetGroup targetGroup) {
+        this.targetGroup = targetGroup;
+    }
 
     public boolean isPermanent() {
         return permanent;
@@ -24,8 +37,9 @@ public class TargetModel {
         this.phoneName = phoneName;
     }
 
-    public TargetModel(String phoneName, boolean permanent) {
+    public TargetModel(String phoneName, boolean permanent, TargetGroup tg) {
         this.phoneName = phoneName;
         this.permanent = permanent;
+        this.targetGroup = tg;
     }
 }

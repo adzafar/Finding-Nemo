@@ -1,5 +1,6 @@
 package com.flipkart.adeelzafar.finding_nemo;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 import android.app.Activity;
@@ -32,7 +33,7 @@ public class Main extends FragmentActivity {
      * {@link android.support.v13.app.FragmentStatePagerAdapter}.
      */
     SectionsPagerAdapter mSectionsPagerAdapter;
-
+    ArrayList<TargetModel> models;
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -47,6 +48,14 @@ public class Main extends FragmentActivity {
         WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_main);
+
+        models = new ArrayList<TargetModel>();
+        models.add(new TargetModel("Adeel", false, TargetModel.TargetGroup.ORANGE));
+        models.add(new TargetModel("Prachi", false, TargetModel.TargetGroup.RED));
+        models.add(new TargetModel("Vidyasankar", false, TargetModel.TargetGroup.AVAILABLE));
+        models.add(new TargetModel("Arpit Agarwal", false, TargetModel.TargetGroup.RED));
+        models.add(new TargetModel("Saurabh Agrawal", false, TargetModel.TargetGroup.YELLOW));
+        models.add(new TargetModel("Tejasvee", false, TargetModel.TargetGroup.AVAILABLE));
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.

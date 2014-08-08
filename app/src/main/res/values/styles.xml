@@ -49,16 +49,12 @@
         <item name="android:background">?android:attr/listDivider</item>
     </style>
 
-    <style name="ListViewUpper">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="TagView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
-    </style>
-
-    <style name="ListViewLower">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_margin">20dip</item>
     </style>
 
 
@@ -67,6 +63,7 @@
     <color name="Orange">#ffff6d04</color>
     <color name="LightGrey">#eeeeee</color>
     <color name="Grey">#888888</color>
-    <color name="Green">#ff15d10c</color>
+    <color name="Green">#ff0c7944</color>
     <color name="Blue">#ff0310ff</color>
+
 </resources>

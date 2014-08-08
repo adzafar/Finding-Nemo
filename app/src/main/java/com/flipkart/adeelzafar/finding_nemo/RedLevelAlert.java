@@ -7,6 +7,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
@@ -26,19 +27,25 @@ public class RedLevelAlert extends AbstractAlertFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ArrayList<TargetModel> redListItems = new ArrayList<TargetModel>();
-        redListItems.add(new TargetModel("abcd", true));
-        redListItems.add(new TargetModel("xyz", false));
-        redListItems.add(new TargetModel("lmno", false));
-
-        TargetListAdapter adapter = new TargetListAdapter(, R.layout.list_item_view, redListItems) ;
-        getListView ( ) . setAdapter ( adapter ) ;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_red_level_alert, container, false);
+    }
+
+    public void onActivityCreated(Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
+        ArrayList<TargetModel> models = new ArrayList<TargetModel>();
+        models.add(new TargetModel("abc", true, TargetModel.TargetGroup.RED));
+        models.add(new TargetModel("xyz wefweg wegweg", false, TargetModel.TargetGroup.RED));
+
+        LinearLayout layout = (LinearLayout)getActivity().findViewById(R.id.red_upper);
+
+        for(getActivity().){
+            layout.addView(CustomButton.makeButton(model, getActivity()));
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
